@@ -2,26 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* global.css */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	background-color: #ffedd5;
+	overflow: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.dot {
+	position: absolute;
+	border-radius: 50%;
+	background-color: #7c2d12;
+	animation: moveDot infinite;
+}
+
+/* global.css */
+
+/* ... (previous styles) ... */
+
+@keyframes moveDot {
+	0% {
+		transform: translate(0, 0);
+	}
+	10% {
+		transform: translate(25px, 30px); /* Move down and to the right */
+	}
+	20% {
+		transform: translate(-10px, 40px); /* Move down and slightly to the left */
+	}
+	30% {
+		transform: translate(-30px, -15px); /* Move up and to the left */
+	}
+	40% {
+		transform: translate(20px, -25px); /* Move up and to the right */
+	}
+	50% {
+		transform: translate(15px, 10px); /* Slight movement */
+	}
+	60% {
+		transform: translate(-20px, 5px); /* Move slightly down and to the left */
+	}
+	70% {
+		transform: translate(10px, 15px); /* Move down and slightly to the right */
+	}
+	80% {
+		transform: translate(30px, -10px); /* Move up and to the right */
+	}
+	90% {
+		transform: translate(-25px, 20px); /* Move down and to the left */
+	}
+	100% {
+		transform: translate(0, 0); /* Return to original position */
+	}
 }
